@@ -1,0 +1,17 @@
+if __name__ == '__main__':
+    n = int(input())
+    result = []
+    
+    for _ in range(n):
+        # Split the input into command and arguments
+        parts = input().split()
+        command = parts[0]
+        args = parts[1:]
+        
+        if command == "print":
+            print(result)
+        else:
+            # Convert string arguments to integers
+            formatted_args = list(map(int, args))
+            # Dynamically call the method on the list object
+            getattr(result, command)(*formatted_args)
