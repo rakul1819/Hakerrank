@@ -1,0 +1,24 @@
+
+from collections import OrderedDict
+
+if __name__ == '__main__':
+    n = int(input())
+    # OrderedDict keeps track of the order items are first added
+    inventory = OrderedDict()
+    
+    for _ in range(n):
+        # rpartition(' ') splits at the last space: (left, separator, right)
+        data = input().rpartition(' ')
+        item_name = data[0]
+        price = int(data[2])
+        
+        # Add price to existing total or initialize if new
+        if item_name in inventory:
+            inventory[item_name] += price
+        else:
+            inventory[item_name] = price
+            
+    # Print each item and its accumulated net price
+    for item, net_price in inventory.items():
+        print(f"{item} {net_price}")
+
