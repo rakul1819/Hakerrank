@@ -1,0 +1,19 @@
+import re
+
+s = input().strip()
+k = input().strip()
+
+# Regex explanation:
+# (?=...) is a positive lookahead. It matches the pattern 
+# without 'consuming' the characters, allowing for overlapping matches.
+pattern = re.compile(f'(?=({k}))')
+
+matches = list(pattern.finditer(s))
+
+if matches:
+    for m in matches:
+        # m.start() is the index where the lookahead found the match
+        # The end index is start + length of k - 1
+        print((m.start(), m.start() + len(k) - 1))
+else:
+    print((-1, -1))
