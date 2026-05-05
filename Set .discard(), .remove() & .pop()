@@ -1,0 +1,28 @@
+if __name__ == '__main__':
+    # n: number of elements in the set
+    n = int(input())
+    
+    # Read integers and create the set
+    s = set(map(int, input().split()))
+    
+    # num_commands: number of operations to perform
+    num_commands = int(input())
+    
+    for _ in range(num_commands):
+        # Read command and optional value
+        # e.g., "remove 9" -> ["remove", "9"]
+        # e.g., "pop" -> ["pop"]
+        command = input().split()
+        cmd_name = command[0]
+        
+        if cmd_name == 'pop':
+            s.pop()
+        elif cmd_name == 'remove':
+            val = int(command[1])
+            s.remove(val)
+        elif cmd_name == 'discard':
+            val = int(command[1])
+            s.discard(val)
+            
+    # Output the sum of the remaining elements
+    print(sum(s))
