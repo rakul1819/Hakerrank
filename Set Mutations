@@ -1,0 +1,23 @@
+if __name__ == '__main__':
+    # Initial set A
+    n = int(input())
+    storage_set = set(map(int, input().split()))
+    
+    # Number of other sets/operations
+    num_ops = int(input())
+    
+    for _ in range(num_ops):
+        # Read operation name and the length of the next set
+        # e.g., "intersection_update 10"
+        op_info = input().split()
+        op_name = op_info[0]
+        
+        # Read the elements of the second set
+        other_set = set(map(int, input().split()))
+        
+        # Dynamically call the method on storage_set
+        # getattr(object, name) looks for the method 'op_name' within 'storage_set'
+        getattr(storage_set, op_name)(other_set)
+    
+    # Print the sum of the elements remaining in set A
+    print(sum(storage_set))
