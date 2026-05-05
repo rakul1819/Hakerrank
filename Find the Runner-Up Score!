@@ -1,0 +1,11 @@
+if __name__ == '__main__':
+    n = int(input())
+    # Map the input strings to integers and store them in a list
+    arr = map(int, input().split())
+    
+    # 1. Convert to a set to remove duplicates
+    # 2. Convert back to a list and sort it
+    unique_scores = sorted(set(arr))
+    
+    # 3. The runner-up is the second to last element
+    print(unique_scores[-2])
