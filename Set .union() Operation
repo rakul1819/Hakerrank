@@ -1,0 +1,15 @@
+if __name__ == '__main__':
+    # Read English subscribers
+    n = int(input())
+    english_subs = set(map(int, input().split()))
+    
+    # Read French subscribers
+    m = int(input())
+    french_subs = set(map(int, input().split()))
+    
+    # Find the union of both sets
+    # The '|' operator or .union() method can be used
+    at_least_one = english_subs.union(french_subs)
+    
+    # Print the total number of unique students
+    print(len(at_least_one))
