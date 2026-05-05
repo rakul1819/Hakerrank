@@ -1,0 +1,17 @@
+from collections import Counter
+
+if __name__ == '__main__':
+    s = input().strip()
+    
+    # 1. Count occurrences of each character
+    counts = Counter(s)
+    
+    # 2. Sort the characters. 
+    # We sort by (-frequency, character). 
+    # The negative sign flips the frequency to descending order, 
+    # while the character string maintains ascending alphabetical order.
+    unique_chars = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
+    
+    # 3. Print the top 3 results
+    for i in range(3):
+        print(f"{unique_chars[i][0]} {unique_chars[i][1]}")
