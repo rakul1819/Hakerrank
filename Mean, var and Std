@@ -1,0 +1,20 @@
+import numpy
+
+# Reading N and M
+n, m = map(int, input().split())
+
+# Creating the array from N lines of input
+data = [list(map(int, input().split())) for _ in range(n)]
+my_array = numpy.array(data)
+
+# 1. Mean along axis 1
+print(numpy.mean(my_array, axis=1))
+
+# 2. Var along axis 0
+print(numpy.var(my_array, axis=0))
+
+# 3. Std along axis None (flattened)
+# Note: Newer NumPy versions might format this differently; 
+# legacy settings are sometimes needed for strict HackerRank tests.
+result_std = numpy.std(my_array, axis=None)
+print(numpy.around(result_std, 11))
