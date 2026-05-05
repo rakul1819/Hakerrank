@@ -1,0 +1,9 @@
+
+
+def arrays(arr):
+    # This line must be indented (usually 4 spaces)
+    return numpy.array(arr[::-1], float)
+
+
+
+
