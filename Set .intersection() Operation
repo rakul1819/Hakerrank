@@ -1,0 +1,15 @@
+if __name__ == '__main__':
+    # Read roll numbers for English newspaper subscribers
+    _ = int(input())
+    english_subs = set(map(int, input().split()))
+    
+    # Read roll numbers for French newspaper subscribers
+    _ = int(input())
+    french_subs = set(map(int, input().split()))
+    
+    # Find common elements using the intersection operation
+    # You can use .intersection() or the '&' operator
+    both_subs = english_subs.intersection(french_subs)
+    
+    # Print the total count of students in the intersection
+    print(len(both_subs))
