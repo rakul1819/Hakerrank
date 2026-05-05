@@ -1,0 +1,19 @@
+import numpy
+
+# Read the dimension N
+n = int(input())
+
+# Read matrix A
+a = []
+for _ in range(n):
+    a.append(list(map(int, input().split())))
+a = numpy.array(a)
+
+# Read matrix B
+b = []
+for _ in range(n):
+    b.append(list(map(int, input().split())))
+b = numpy.array(b)
+
+# Compute and print the matrix product
+print(numpy.dot(a, b))
