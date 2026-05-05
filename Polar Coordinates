@@ -1,0 +1,10 @@
+import cmath
+
+# Convert the input string directly into a complex number object
+z = complex(input().strip())
+
+# Print the modulus (absolute value)
+print(abs(z))
+
+# Print the phase angle
+print(cmath.phase(z))
