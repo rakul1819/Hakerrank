@@ -1,0 +1,16 @@
+def custom_sort(c):
+    if c.islower():
+        return (0, c)
+    elif c.isupper():
+        return (1, c)
+    elif c.isdigit():
+        if int(c) % 2 != 0:
+            return (2, c)  # Odd digits
+        else:
+            return (3, c)  # Even digits
+
+# Read input string
+s = input()
+
+# Sort using the custom key and join back into a string
+print("".join(sorted(s, key=custom_sort)))
