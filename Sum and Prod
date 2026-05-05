@@ -1,0 +1,16 @@
+import numpy
+
+# Read N (rows) and M (columns)
+n, m = map(int, input().split())
+
+# Read the matrix row by row and convert to a NumPy array
+array = numpy.array([input().split() for _ in range(n)], int)
+
+# Step 1: Calculate the sum along axis 0 (result is a 1D array)
+sum_axis_0 = numpy.sum(array, axis=0)
+
+# Step 2: Calculate the product of that result (sum of all dimensions)
+result = numpy.prod(sum_axis_0)
+
+# Print the final result
+print(result)
