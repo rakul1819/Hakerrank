@@ -1,0 +1,12 @@
+import math
+
+# Read the lengths of sides AB and BC
+ab = float(input())
+bc = float(input())
+
+# Calculate the angle in radians and convert to degrees
+# Then round to the nearest integer
+angle = round(math.degrees(math.atan2(ab, bc)))
+
+# Print with the degree symbol using ASCII 176
+print(str(angle) + chr(176))
