@@ -1,0 +1,8 @@
+import re
+
+# [.,] matches any character inside the brackets (dot or comma)
+regex_pattern = r"[.,]"
+
+
+
+
