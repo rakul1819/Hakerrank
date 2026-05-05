@@ -1,0 +1,18 @@
+import math
+
+# Read inputs
+n = int(input())
+letters = input().split()
+k = int(input())
+
+# Count occurrences of 'a'
+a_count = letters.count('a')
+not_a_count = n - a_count
+
+# Calculate combinations
+total_combinations = math.comb(n, k)
+no_a_combinations = math.comb(not_a_count, k)
+
+# Probability of at least one 'a'
+probability = 1 - (no_a_combinations / total_combinations)
+print(round(probability, 4))
