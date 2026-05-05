@@ -1,0 +1,17 @@
+from itertools import groupby
+
+# Step 1: Read the input string
+s = input().strip()
+
+# Step 2: Use groupby to find consecutive characters
+# k is the character, g is the "iterator" containing the occurrences
+result = []
+for k, g in groupby(s):
+    # Calculate the number of times the character appeared consecutively
+    count = len(list(g))
+    # Format as (count, character)
+    result.append(f"({count}, {k})")
+
+# Step 3: Print all results joined by a space
+print(" ".join(result))
+
